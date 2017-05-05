@@ -1,0 +1,34 @@
+.box {
+    float: left;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 180px;
+    left: 270px;
+    #title{
+        position: relative;
+        top: 10px;
+        font-family: 'HG行書体';
+    }
+}
+.next_button {
+    position: absolute;
+    top: 860px;
+    left: 920px;
+}
+.comment {
+    position: absolute;
+    top: 790px;
+    left: 100px;
+}
+/* clearfix */
+.box:before,
+.box:after {
+    content: "";
+    display: table;
+}
+
+.box:after {
+    clear: both;
+}

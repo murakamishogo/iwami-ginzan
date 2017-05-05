@@ -1,0 +1,46 @@
+<script inline="javascript" type="text/javascript">
+  /*<![CDATA[*/
+  $(function() {
+    //画像、タイトル、コメントを配列に格納する
+    var imgs = new Array();
+    imgs[0]  = {title:"出発地点付近の庭園",img:"/assets/teien.jpg",comment:"天気もなかなか良かったです"}
+    imgs[1]  = {title:"休憩所",img:"/assets/kyukeijyo1.jpg",comment:"休憩所その１"}
+    imgs[2]  = {title:"欄干？",img:"/assets/michi.jpg",comment:"ひたすら道が続きます"}
+    imgs[3]  = {title:"並木道",img:"/assets/namikimichi.jpg",comment:"並木道という表現がぴったり合いそうな光景ですね"}
+    imgs[4]  = {title:"分かれ道",img:"/assets/wakaremichi.jpg",comment:"どっちへ行くんだ？"}
+    imgs[5]  = {title:"墓",img:"/assets/haka.jpg",comment:"かなり古いお墓です。南無阿弥陀仏。。"}
+    imgs[6]  = {title:"休憩所",img:"/assets/kyukeijyo2.jpg",comment:"休憩所その２"}
+    imgs[7]  = {title:"記念碑",img:"/assets/kinenhi.jpg",comment:"この銀山の豊作？を祈願して建てられたものだそうな"}
+    imgs[8]  = {title:"狭い道",img:"/assets/semaimichi.jpg",comment:"さらに奥へ進みます"}
+    imgs[9]  = {title:"遺跡",img:"/assets/iseki.jpg",comment:"掘り出した銀を集めた場所。。だったかな？"}
+    imgs[10] = {title:"頂上付近",img:"/assets/yamanami.jpg",comment:"だいぶ登ったー！もう人っ子一人いません（笑)"}
+    imgs[11] = {title:"注意書き",img:"/assets/chui.jpg",comment:"を、をい"}
+    imgs[12] = {title:"最深部？",img:"/assets/tetsugoshi.jpg",comment:"いかにもなにか出そうな鉄格子。。これ以上進めませんでした。足腰がもうヨレヨレです（笑)"}
+    //イベントハンドラ
+    $("#next").on('click',function(){
+        var id = Number($("#id")[0].innerHTML);
+        if (id == imgs.length-1) {return;}
+        next_image(imgs,id+1);
+        $("#id")[0].innerHTML = id+1
+    });
+    $("#prev").on('click',function(){
+        var id = Number($("#id")[0].innerHTML);
+        if (id == 0) {return;}
+        next_image(imgs,id-1);
+        $("#id")[0].innerHTML = id-1
+    });
+  });
+  /*]]>*/
+</script>
+<div class="box" align="center">
+  <img id="gazo" src="/assets/teien.jpg" alt="">
+  <h1 id="title">出発地点付近の庭園</h1>
+  <h6 id="id" hidden="true">0</h6>
+</div>
+<div class="comment">
+    <h3 id="comment">天気もなかなか良かったです</h3>
+</div>
+<div class="next_button">
+    <input id="prev" type="button" value="前の写真" style="width:80px;height:40px">
+    <input id="next" type="button" value="次の写真" style="width:80px;height:40px">
+</div>
